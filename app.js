@@ -260,3 +260,32 @@ function stopSecondInnings() {
     alert("Inning Finished, You Lost");
   }
 }
+
+// --- ENTER KEY FUNCTIONALITY ---
+
+document.addEventListener("keydown", function (event) {
+  
+  if (event.key === "Enter") {
+    event.preventDefault(); 
+
+    if (document.body.contains(nameWrapper)) {
+      nameNextButton.click();
+    }
+
+    else if (document.body.contains(teamWrapper) && teamWrapper.classList.contains("show")) {
+      teamNextButton.click();
+    }
+
+    else if (document.body.contains(tossWrapper) && tossWrapper.classList.contains("show")) {
+      tossNextButton.click();
+    }
+
+    else if (document.body.contains(electedWrapper) && electedWrapper.classList.contains("show")) {
+      electedNextButton.click();
+    }
+
+    else if (document.body.contains(playWrapper) && playWrapper.classList.contains("show") && document.body.contains(playClickButton)) {
+      playClickButton.click();
+    }
+  }
+});
